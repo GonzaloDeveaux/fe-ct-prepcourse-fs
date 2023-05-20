@@ -119,7 +119,7 @@ function fizzBuzz(num) {
    if (num % 3 === 0) return "fizz"; 
    if (num % 5 === 0) return "buzz";
 
-   return false;
+   return num;
 
 }
 
@@ -151,22 +151,39 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
-    for (var i=0 ; i % 1 === 0 && i % 1 === 0 ; i++){
-       num = suma + i;
-       console.log("Variable de iteracion: ", i);
-   }
- }
+      if (num <= 1) {
+        return false;
+      }
+      
+      for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+          return false;
+        }
+      }
+      
+      return true;
+    }
 
 function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
    // Caso contrario, retornar "Soy falso".
    // Tu código:
+   if (valor){
+      return "Soy verdadero";
+   } else {
+      return "Soy falso";
+   }
 }
 
 function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar True.
    // Caso contrario, retornar False.
    // Tu código:
+   if (num >= 100 && num <= 999) {
+      return true;
+    } else {
+      return false;
+    }
 }
 
 function doWhile(num) {
@@ -174,6 +191,14 @@ function doWhile(num) {
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
+   let contador = 0;
+
+  do {
+    num += 5;
+    contador++;
+  } while (contador < 8);
+
+  return num;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
